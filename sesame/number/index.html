@@ -1,0 +1,163 @@
+<html>
+<head>
+	<title>PBS Kids: Sesame Street - Number of the Day</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script language="JavaScript" src="number_lib.js"></script>
+	<script language="JavaScript">
+<!--
+
+var xcorner;
+var ycorner;
+
+var lowGame = 0;
+var highGame = 20;
+
+var number = 3;
+if (number > highGame)
+	number = Math.floor(Math.random() * (highGame - lowGame + 1)) + lowGame;
+hello = initImage("images/hello.gif");
+
+function startGame() {
+	xcorner = xImage("gameField");
+	ycorner = yImage("gameField") - 1;
+	gameboard = initLayer("gameboardDiv");
+	scene = initLayer("sceneDiv");
+	count = initLayer("countDiv");
+	moveLayer(gameboard, xcorner, ycorner);
+	showLayer(gameboard);
+	moveLayer(scene, xcorner, ycorner);
+	showLayer(scene);
+	if (!isMacIE()) {
+		initAudio();
+		playOrganSound();
+		setTimeout("playCountSound()", 1750);
+		setTimeout("playNumberSound()", 5250);
+		setTimeout("goGame()", 20000);
+	} else {
+		showCountAnim();
+		setTimeout("goGame()", 10000);
+	}
+}
+
+function showCountAnim() {
+	moveLayer(count, xcorner + 235, ycorner + 89);
+	showLayer(count);
+	writeLayer(count, '<a href="javascript:goGame()"><img src="images/hello.gif" width="206" height="156" border="0" alt="" name="countImage"></a>');
+}
+
+function playOrganSound() {
+	playSound("organ");
+}
+
+function playCountSound() {
+	showCountAnim();
+	playSound("count");
+}
+
+function playNumberSound() {
+	playSound("number");
+}
+
+function goGame() {
+	document.location = number + ".html";
+}
+
+//-->
+	</script>
+</head>
+<body bgcolor="#ffffff" text="#000000" background="../images/count_back.gif" leftmargin="5" topmargin="0" marginwidth="5" marginheight="0" onLoad="if (isMacIE()) startGame(); else setTimeout('startGame()', 2000);">
+<table width="555" border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr> 
+		<td><a href="http://pbskids.org"><img src="../images/count_01.gif" width=46 height=98 border="0" alt="PBS Kids"></a></td>
+		<td><img src="../images/count_02.gif" width=12 height=98 border="0" alt=""></td>
+		<td><a href="../index.html"><img src="../images/count_03.gif" width=201 height=98 border="0" alt="Sesame Street"></a></td>
+		<td><img src="../images/count_04.gif" width=69 height=98 border="0" alt=""></td>
+		<td><a href="index.html"><img src="../images/count_05.gif" width=227 height=98 border="0" alt="Number of the Day"></a></td>
+	</tr>
+</table>
+<table width="555" border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr> 
+		<td colspan="5"><img src="../images/pixel.gif" width="550" height="1" border="0" alt="" name="gameField"><br><script language="JavaScript">
+<!--
+document.write('<img src="../images/pixel.gif" width="550" height="284" border="0" alt="">');
+// -->
+</script><noscript><table width="550" border="0" cellpadding="0" cellspacing="0">
+			<tr> 
+				<td width="1"><img src="../images/pixel.gif" width="1" height="284" border="0" alt="" name="gameField"></td>
+				<td width="548" align="center" valign="middle"><img src="../images/pixel.gif" width="548" height="1" border="0" alt=""><br>
+<font color="#ffffff" face="Arial,Helvetica,sans-serif" size="2"><b>We're sorry, but you must enable JavaScript in your browser to play<br>Count Von Count's Number of the Day.  If your browser is capable of running<br>JavaScript, please enable that option and reload this page.</b></font></td>
+				<td width="1"><img src="../images/pixel.gif" width="1" height="284" border="0" alt=""></td>
+			</tr>
+</table></noscript></td>
+	</tr>
+	<tr> 
+		<td colspan="5"><img src="../images/pixel.gif" width="1" height="43" border="0" alt=""></td>
+	</tr>
+</table>
+
+<link rel="stylesheet" href="globnav.css" type="text/css">
+ 
+<body link="#3366FF" vlink="#3366FF" alink="#3366FF">
+<table width="555" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr> 
+    <td width="42"><a href="../letter/index.html"><img src="../images/menubar_06.jpg" width=42 height=42 border="0" alt="Cookie Monster" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../number/index.html"><img src="../images/menubar_01.jpg" width=42 height=42 border="0" alt="The Count" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../word/index.html"><img src="../images/menubar_04.jpg" width=42 height=42 border="0" alt="Rosita" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../ernie/index.html"><img src="../images/menubar_05.jpg" width=42 height=42 border="0" alt="Ernie" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../coloring/index.html"><img src="../images/menubar_08.jpg" width=42 height=42 border="0" alt="Big Bird" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../elmosworld/index.html"><img src="../images/menubar_07.jpg" width=42 height=42 border="0" alt="Elmo" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../zoe/index.html"><img src="../images/menubar_zoe.jpg" width=42 height=42 border="0" alt="Zoe" vspace="0" hspace="0"></a></td>
+    <td nowrap width="42"><a href="../babybear/index.html"><img src="../images/menubar_02.jpg" width=42 height=42 border="0" alt="Baby Bear" vspace="0" hspace="0"></a></td>
+    <td nowrap width="42"><a href="../grover/index.html"><img src="../images/menubar_grover.jpg" width=42 height=42 border="0" alt="Grover" vspace="0" hspace="0"></a></td>
+    <td width="127"><a href="../songs/index.html"><img src="../images/menubar11.gif" width="42" height="42" border="0" alt="Hoots" vspace="0" hspace="0"></a><img src="../images/menubar_09.gif" width=85 height=42></td>
+    <td width="50"><a href="../caregivers/index.html"><img src="../images/menubar_10.gif" width=50 height=42 border="0" alt="Caregivers"></a></td>
+  </tr>
+  <tr> 
+    <td colspan="11"><img src="../images/pixel.gif" width="1" height="15" border="0" alt=""></td>
+  </tr>
+  <tr> 
+    <td colspan="11" align="center"><font face="Arial, Helvetica, sans-serif"><a href="../index.html"><span class="pbsglobnav"><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">HOME</font></span></a><font face="Verdana, Arial, Helvetica, sans-serif" size="-2"><span class="pbsglobnav"> 
+      | <a href="http://pbskids.org">PBS Kids</a><br>
+      <a href="../letter/index.html">Cookie's Corner</a> | <a href="../number/index.html">Number 
+      of the Day</a> | <a href="../word/index.html">Spanish Word Game</a> | <a href="../ernie/index.html">Journey 
+      to Ernie</a> | <a href="../coloring/index.html">Coloring Pages</a><br>
+      <a href="../elmosworld/index.html">Elmo's World</a> | <a href="../zoe/index.html">Zoe's 
+      Scavenger Hunt</a> |<a href="../songs/index.html"> Sesame Songs </a>|<a href="../babybear/index.html"> 
+      BabyBear's Painting </a>| <a href="../grover/index.html">Global Grover</a><br><a href="../caregivers/index.html">Caregivers Area</a></span></font></font></td>
+  </tr>
+  <tr> 
+    <td colspan="11"><img src="../images/pixel.gif" width="1" height="15" border="0" alt=""></td>
+  </tr>
+  <tr> 
+    <td colspan="11"><img src="../images/pixel.gif" width="1" height="10" border="0" alt=""><b><font size="1" face="Arial, Helvetica, sans-serif" class="copright"> 
+      
+<link rel="stylesheet" href="globnav.css" type="text/css">
+<center><table><tr><td>
+<div align="left"><font face="Arial, Helvetica, sans-serif" class="copright" size="-2"><font color="#000000">&copy; 
+  2005 Sesame Workshop. "Sesame Street" and its logo are<br>
+trademarks of Sesame Workshop. All rights reserved.</font></font></div>
+</td></tr></table></center>
+<br/><br/>
+      </font></b></td>
+  </tr>
+</table>
+
+
+<DIV ID="gameboardDiv" STYLE="position:absolute; left:0; top:0; width:550; height:285; z-index:1; visibility:hidden;"><img src="images/bg.gif" width=550 height=285 border=0></DIV>
+<DIV ID="sceneDiv" STYLE="position:absolute; left:0; top:0; width:550; height:285; z-index:2; visibility:hidden;"><a href="javascript:goGame()"><img src="images/bg-start.gif" width=550 height=285 border=0></a></DIV>
+
+<DIV ID="countDiv" STYLE="position:absolute; left:0; top:0; width:206; height:156; z-index:3; visibility:hidden;"><img src="../images/pixel.gif" width=550 height=285 border=0></DIV>
+<script language="JavaScript">
+<!--
+
+if (!isMacIE()) {
+	document.writeln('<applet code="MultiAudioClipPlayer.class" codebase="applets" name="MultiAudioClipPlayer" width="1" height="1" mayscript>');
+	document.writeln('<param name="names" value="organ,count,number">');
+	document.writeln('<param name="sounds" value="sounds/organ.au,sounds/count.au,sounds/numberofday.au">');
+	document.writeln('</applet>');
+}
+
+// -->
+</script>
+</body>
+</html>
