@@ -1,0 +1,251 @@
+<HTML>
+<HEAD>
+<TITLE>PBS Kids: Sesame Street - Spanish Word of the Day</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<script language="JavaScript" src="word_lib.js"></script>
+	<script language="JavaScript">
+<!--
+
+var playable = false;
+var talking = false;
+var mouthState;
+var flapTimer;
+var flapDelay = 200;
+
+var acasa = initImage('images/g-casa-anim.gif');
+var asol = initImage('images/g-sol-anim.gif');
+var aagua = initImage('images/g-agua-anim.gif');
+var aflor = initImage('images/g-flor-anim.gif');
+var arosita = initImage('images/g-rosita-talk.gif');
+var afind = initImage('images/g-flor-find.gif');
+
+var casa = initImage('images/g-casa.gif');
+var sol = initImage('images/g-sol.gif');
+var agua = initImage('images/g-agua.gif');
+var flor = initImage('images/g-flor.gif');
+var rosita = initImage('images/g-rosita.gif');
+var find = initImage('images/g-find.gif');
+
+function startGame() {
+	onRosita();
+	if (!isMacIE()) {
+		initAudio();
+		playPlaySound();
+		setTimeout("playLookSound()", 2600);
+		setTimeout("showFindObject()", 5800);
+		setTimeout("offRosita()", 6800);
+	} else {
+		setTimeout("showFindObject()", 2000);
+		setTimeout("offRosita()", 4000);
+	}
+}
+
+function showFindObject() {
+	changeImage('Image6', afind);
+	playable = true;
+	if (!isMacIE())
+		playObjectSound();
+}
+
+function showPayoff() {
+	playable = false;
+	changeImage('Image1', acasa);
+	changeImage('Image2', asol);
+	changeImage('Image3', aagua);
+	changeImage('Image4', aflor);
+	onRosita();
+	if (!isMacIE()) {
+		playBienSound();
+		setTimeout("playObjectSound()", 2200);
+		setTimeout("offRosita()", 3200);
+		setTimeout("nextGame()", 4200);
+	} else {
+		setTimeout("offRosita()", 3000);
+		setTimeout("nextGame()", 3100);
+	}
+}
+
+function playHolaSound() {
+	if (!isMacIE()) {
+		onRosita();
+		playSound("hola");
+		setTimeout("offRosita()", 3860);
+	}
+}
+function playPlaySound() {
+	playSound("play");
+}
+function playLookSound() {
+	playSound("look");
+}
+function playObjectSound() {
+	playSound("object");
+}
+function playBienSound() {
+	playSound("bien");
+}
+function playNoSound() {
+	openMouth();
+	setTimeout("closeMouth()", 500);
+	if (!isMacIE())
+		playSound("no");
+}
+
+function flapRosita() {
+	if (talking) {
+		mouthState = 1 - mouthState;
+		if (mouthState) {
+			openMouth();
+		} else {
+			closeMouth();
+		}
+		flapTimer = setTimeout("flapRosita()", flapDelay);
+	}
+}
+function onRosita() {
+	talking = true;
+	mouthState = 0;
+	flapRosita();
+}
+function offRosita() {
+	talking = false;
+	clearTimeout(flapTimer);
+	closeMouth();
+}
+function openMouth() {
+	changeImage('Image5', arosita);
+}
+function closeMouth() {
+	changeImage('Image5', rosita);
+}
+
+function nextGame() {
+	document.location = "word08.html";
+}
+// -->
+</script>
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" background="../images/rosita_back.gif" leftmargin="5" topmargin="0" marginwidth="5" marginheight="0" onLoad="if (isMacIE()) startGame(); else setTimeout('startGame()', 2000);">
+<script type="text/javascript">
+var GA_env = "UA-4005067-1,UA-4005001-1,UA-3968507-1,UA-3999779-1,ET-3999779-2";
+
+var GA_jshost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + GA_jshost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="/js/ga-494126a3.js" type="text/javascript"></script>
+
+
+<table width=555 border=0 cellpadding=0 cellspacing=0 align="center">
+  <tr> 
+    <td><a href="http://pbskids.org"><img src="../images/rosita_01.gif" width=46 height=98 border="0" alt="PBS Kids"></a></td>
+    <td><img src="../images/rosita_02.gif" width=12 height=98 border="0" alt=""></td>
+    <td><a href="../index.html"><img src="../images/rosita_03.gif" width=201 height=98 border="0" alt="Sesame Street"></td>
+    <td><img src="../images/rosita_04.gif" width=69 height=98 border="0" alt=""></td>
+    <td><a href="index.html"><img src="../images/rosita_05.gif" width=227 height=98 border="0" alt="Spanish Word of the Day"></a></td>
+  </tr>
+</table>
+<table width=555 border=0 cellpadding=0 cellspacing=0 align="center">
+	<tr>
+    <td align="center"><TABLE WIDTH=550 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		
+          <TD> <a href="javascript:void(0)" onMouseOver="if (playable) changeImage('Image1', acasa)" onMouseOut="if (playable) changeImage('Image1', casa)" onClick="if (playable) playNoSound()"><IMG SRC="images/g-casa.gif" WIDTH=164 HEIGHT=124 border="0" name="Image1" alt="house"></a></TD>
+
+	      <TD> <IMG SRC="images/g-midtop.gif" WIDTH=63 HEIGHT=124 alt="Spanish word of the day"></TD>
+
+	      <TD> <IMG SRC="images/g-midtop2.gif" WIDTH=69 HEIGHT=124 alt="Spanish word of the day"></TD>
+
+          <TD> <a href="javascript:void(0)" onMouseOver="if (playable) changeImage('Image2', asol)" onMouseOut="if (playable) changeImage('Image2', sol)" onClick="if (playable) playNoSound()"><IMG SRC="images/g-sol.gif" WIDTH=75 HEIGHT=124 border="0" name="Image2" alt="sun"></a></TD>
+		
+		  <TD> <IMG SRC="images/g-find.gif" WIDTH=180 HEIGHT=124 name="Image6" alt="Spanish word of the day"></TD>
+	</TR>
+	<TR>
+		
+          <TD> <a href="javascript:void(0)" onMouseOver="if (playable) changeImage('Image1', acasa)" onMouseOut="if (playable) changeImage('Image1', casa)" onClick="if (playable) playNoSound()"><IMG SRC="images/g-bottomleft.gif" WIDTH=164 HEIGHT=161 border="0" alt="house"></a></TD>
+		
+	      <TD> <IMG SRC="images/g-midbottom.gif" WIDTH=63 HEIGHT=161 alt="Spanish word of the day"></TD>
+
+          <TD> <a href="javascript:void(0)" onMouseOver="if (playable) changeImage('Image3', aagua)" onMouseOut="if (playable) changeImage('Image3', agua)" onClick="if (playable) playNoSound()"><IMG SRC="images/g-agua.gif" WIDTH=69 HEIGHT=161 border="0" name="Image3" alt="water"></a></TD>
+		
+          <TD> <a href="javascript:void(0)" onMouseOver="if (playable) changeImage('Image4', aflor)" onMouseOut="if (playable) changeImage('Image4', flor)" onClick="if (playable) showPayoff()"><IMG SRC="images/g-flor.gif" WIDTH=75 HEIGHT=161 border="0" name="Image4" alt="flower"></a></TD>
+		
+          <TD> <a href="javascript:void(0)" onClick="if (playable) playHolaSound()"><IMG SRC="images/g-rosita.gif" WIDTH=180 HEIGHT=161 border="0" name="Image5" alt="Rosita"></a></TD>
+	</TR>
+</TABLE></td>
+  </tr>
+	<tr> 
+		<td><img src="../images/pixel.gif" width="1" height="43" border="0"></td>
+	</tr>
+</table>
+
+<link rel="stylesheet" href="globnav.css" type="text/css">
+ 
+<body link="#3366FF" vlink="#3366FF" alink="#3366FF">
+<script type="text/javascript">
+var GA_env = "UA-4005067-1,UA-4005001-1,UA-3968507-1,UA-3999779-1,ET-3999779-2";
+
+var GA_jshost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + GA_jshost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="/js/ga-494126a3.js" type="text/javascript"></script>
+
+
+<table width="555" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr> 
+    <td width="42"><a href="../letter/index.html"><img src="../images/menubar_06.jpg" width=42 height=42 border="0" alt="Cookie Monster games" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../number/index.html"><img src="../images/menubar_01.jpg" width=42 height=42 border="0" alt="The Count Number of the Day game" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../word/index.html"><img src="../images/menubar_04.jpg" width=42 height=42 border="0" alt="Rosita spanish words game" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../ernie/index.html"><img src="../images/menubar_05.jpg" width=42 height=42 border="0" alt="Ernie's Journey to Ernie Games" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../coloring/index.html"><img src="../images/menubar_08.jpg" width=42 height=42 border="0" alt="Big Bird coloring pages" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../elmosworld/index.html"><img src="../images/menubar_07.jpg" width=42 height=42 border="0" alt="Elmo's World" vspace="0" hspace="0"></a></td>
+    <td width="42"><a href="../zoe/index.html"><img src="../images/menubar_zoe.jpg" width=42 height=42 border="0" alt="Zoe's Great Shape game" vspace="0" hspace="0"></a></td>
+    <td nowrap width="42"><a href="../babybear/index.html"><img src="../images/menubar_02.jpg" width=42 height=42 border="0" alt="Baby Bear's Online Coloring Game" vspace="0" hspace="0"></a></td>
+    <td nowrap width="42"><a href="../grover/index.html"><img src="../images/menubar_grover.jpg" width=42 height=42 border="0" alt="Grover's Global Grover Geography game" vspace="0" hspace="0"></a></td>
+    <td width="127"><a href="../songs/index.html"><img src="../images/menubar11.gif" width="42" height="42" border="0" alt="Hoots the Owl's Sesame Street Songs" vspace="0" hspace="0"></a><img src="../images/menubar_09.gif" width=85 height=42></td>
+    <td width="50"><a href="../caregivers/index.html"><img src="../images/menubar_10.gif" width=50 height=42 border="0" alt="Caregivers resources and information for Sesame Street"></a></td>
+  </tr>
+  <tr> 
+    <td colspan="11"><img src="../images/pixel.gif" width="1" height="15" border="0" alt=""></td>
+  </tr>
+  <tr> 
+    <td colspan="11" align="center"><font face="Arial, Helvetica, sans-serif"><a href="../index.html"><span class="pbsglobnav"><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">HOME</font></span></a><font face="Verdana, Arial, Helvetica, sans-serif" size="-2"><span class="pbsglobnav"> 
+      | <a href="http://pbskids.org">PBS KIDS</a><br>
+      <a href="../letter/index.html">Cookie's Corner</a> | <a href="../number/index.html">Number 
+      of the Day</a> | <a href="../word/index.html">Spanish Word Game</a> | <a href="../ernie/index.html">Journey 
+      to Ernie</a> | <a href="../coloring/index.html">Coloring Pages</a><br>
+      <a href="../elmosworld/index.html">Elmo's World</a> | <a href="../zoe/index.html">Zoe's 
+      Scavenger Hunt</a> |<a href="../songs/index.html"> Sesame Songs </a>|<a href="../babybear/index.html"> 
+      BabyBear's Painting </a>| <a href="../grover/index.html">Global Grover</a><br><a href="../caregivers/index.html">Caregivers Area</a></span></font></font></td>
+  </tr>
+  <tr> 
+    <td colspan="11"><img src="../images/pixel.gif" width="1" height="15" border="0" alt=""></td>
+  </tr>
+  <tr> 
+    <td colspan="11"><img src="../images/pixel.gif" width="1" height="10" border="0" alt=""><b><font size="1" face="Arial, Helvetica, sans-serif" class="copright"> 
+      
+<link rel="stylesheet" href="globnav.css" type="text/css">
+<center><table><tr><td>
+<div align="left"><font face="Arial, Helvetica, sans-serif" class="copright" size="-2"><font color="#000000">&copy; 
+  2008 Sesame Workshop. "Sesame Street" and its logo are<br>
+trademarks of Sesame Workshop. All rights reserved.</font></font></div>
+</td></tr></table></center>
+<br/><br/>
+      </font></b></td>
+  </tr>
+</table>
+
+
+<script language="JavaScript">
+<!--
+
+if (!isMacIE()) {
+	document.writeln('<applet code="MultiAudioClipPlayer.class" codebase="applets" name="MultiAudioClipPlayer" width="1" height="1" mayscript>');
+	document.writeln('<param name="names" value="hola,play,look,object,bien,no">');
+	document.writeln('<param name="sounds" value="sounds/hola-3.au,sounds/play-2.au,sounds/look-garden.au,sounds/flor.au,sounds/bien-3.au,sounds/no.au">');
+	document.writeln('</applet>');
+}
+
+// -->
+</script>
+</body>
+</html>
